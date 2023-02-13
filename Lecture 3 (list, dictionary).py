@@ -50,23 +50,41 @@ for i in range(len(t)):
 
 # Словари 'dictionary' с доступом по ключу.
 d = {}  # или d = dict()
-d['q'] = 'qwerty' # q - ключ
+d['q'] = 'qwerty' # q - ключ. Добавляем значение в словарь.
 print(d)
+# Либо если нужно добавить несколько значений
+d.update({'four': 4, 'five': 5})
+print(d) 
 
 dictionary = {}
 dictionary = {'right': '->', 'left': '<-'}
-print(dictionary['right'])
-dictionary[895] = 123
+print(dictionary['right'])      # Или через get - print(dictionary.get('right')). Через get можно выводить элемент,  
+dictionary[895] = 123           # заданный по умолчанию через второй аргумент.
 print(dictionary)
 
 dictionary = {'right': '->', 'left': '<-'}
-del dictionary['left']   # удаление элемента
+del dictionary['left']   # удаление элемента. Или dictionary.pop('left')
 for item in dictionary:
-    print(item)          # вывод ключей
+    print(item)          # вывод ключей. Или print(dictionary.keys())
 print('{}:{}'.format(item, dictionary[item])) # вывод ключ + элемент
 # или
 for (k, v) in dictionary.items():
     print(k, v)
+# Вывод только значений
+print(dictionary.values())
+
+# Вложенный словарь
+dict1 = {'Tom': {'English': 5, 'Math': 5}, 'Red': {'English': 4, 'Math': 4}}
+# print(dict1['Tom'])
+for i in dict1['Tom'].items(): # вывод в список по строкам
+    print(*i)
+# или
+print(dict1['Red']['Math'])
+# Добавление элементов во вложенный словарь
+dict1.update({'Wer': {'English': 3, 'Math': 3}})
+# и
+dict1['Tom'].update({'Trud': 5})
+print(dict1)
 
 # Множества - уникальные элементы, не повторяются и не индексируются!
 colors = {'red', 'green', 'black'} # или q = set()
