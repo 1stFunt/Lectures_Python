@@ -42,9 +42,9 @@ def quick_sort(array):
         return array
     else:
         pivot = array[0]
-    less = [i for i in array[1:] if i <= pivot]     # Первый элемент известен, поэтому от 1 до - [1:]
+    less = [i for i in array[1:] if i <= pivot]    # Первый элемент известен, поэтому от 1 до - [1:]
     greater = [i for i in array[1:] if i > pivot]
-    return quick_sort(less) + [pivot] + quick_sort(greater)     # pivot - заключаем в скобки, чтоб перевести из int в list
+    return quick_sort(less) + [pivot] + quick_sort(greater)    # pivot - заключаем в скобки, чтоб перевести из int в list
 print(quick_sort([14, 4, 5, 7, 9, 8, 10]))
 
 # Сортировка слиянием (смотреть суть на картинке .png)
