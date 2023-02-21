@@ -16,9 +16,26 @@ print(*find(orbits))
 # ещё задачка
 def same_by(func, collection):
     return len(list(filter(func, collection))) == 0     # x % 2 равно 1 когда число нечетное, 1 - это True, а функция filter возвращает True
-                                                        # В данной задаче всё что вернёт filter в функции same_by не будет равнятся 0 по условию,            
+                                                        # В данной задаче всё что вернёт filter в функции same_by не будет равнятся 0 по условию,
 values = [0, 2, 10, 6]                                  # если попадётся нечётное число
 if same_by(lambda x: x % 2, values):
     print('same')
 else:
     print('different')
+# или
+def same_by(func, collection):
+    check = map(func, collection)
+    return sum(check) == 0
+values = [0, 2, 10, 7]
+if same_by(lambda x: x % 2, values):
+    print('same')
+else:
+    print('different')
+
+# Dict Comprehension (словарь)
+print({i: i * i for i in range(1, 10)})
+# List Comprehension (список)
+print([i * i for i in range(1, 10)])
+# или
+from random import randint as rd
+print([rd(1, 10) for i in range(1, 10)])
