@@ -11,7 +11,7 @@ print(count)
 
 # Дан список чисел. Посчитайте, сколько в нем пар элементов, равных друг другу. Считается, что любые два элемента,
 # равные друг другу образуют одну пару, которую необходимо посчитать.
-list_1 = [int(i) for i in input().split()]
+list_1 = [int(i) for i in input().split()]      # или list_1 = list(map(int, input().split()))
 counter = 0
 print(list_1)
 for i in range(len(list_1)):
